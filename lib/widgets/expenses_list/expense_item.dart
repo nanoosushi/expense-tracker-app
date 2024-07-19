@@ -10,8 +10,12 @@ class ExpenseItem extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(expense.title),
+            Text(
+              expense.title,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
             const SizedBox(
               height: 4,
             ),
@@ -19,7 +23,7 @@ class ExpenseItem extends StatelessWidget {
               children: [
                 Text(
                   // 12.3648 -> 12.36 teo decimal place
-                  '\$${expense.amount.toStringAsFixed(2)}',
+                  '฿${expense.amount.toStringAsFixed(2)}',
                 ),
                 const Spacer(), // take all remaining space
                 Row(
